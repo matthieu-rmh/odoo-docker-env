@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <!-- Menu Item -->
+        <menuitem id="menu_hello_world" name="Hello World" sequence="10"/>
+
+        <!-- Action -->
+        <record id="action_hello_world" model="ir.actions.act_window">
+            <field name="name">Hello World</field>
+            <field name="res_model">hello.world</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_hello_world_tree" model="ir.ui.view">
+            <field name="name">hello.world.tree</field>
+            <field name="model">hello.world</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_hello_world_form" model="ir.ui.view">
+            <field name="name">hello.world.form</field>
+            <field name="model">hello.world</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action Binding -->
+        <menuitem id="menu_hello_world_action" name="Hello World" parent="menu_hello_world" action="action_hello_world"/>
+    </data>
+</odoo>
